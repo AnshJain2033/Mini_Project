@@ -4,6 +4,9 @@ using namespace std;
 int bookingID=0;
 void header();
 void interfaceWindow_01();
+struct triplet{
+    int x,y,z;
+};
 string dishes[9]={"Pizza","Pasta","Burger","Sprite","Coca cola","Samosa","Chips","Roti","Dal"};
 void makeBillForBooking();
 class booking{
@@ -13,7 +16,7 @@ class booking{
     int dateOfdeparture;
     int bill;
     int yourBookingID;
-    vector<vector<vector<int>>>myOrdersBooking;
+    vector<vector<triplet>>myOrdersBooking;
     booking(string name,int arrival,int dateOfdeparture,int & bookingID){
         this->name=name;
         this->dateOfarrival=arrival;
@@ -93,18 +96,20 @@ void makeBillForBooking(){
     cin>>t2;
     if(v.size()>=t2){
     fp1.open("YourBill.txt",fstream::app);
-    fp1<<"--------------------------------RECEIPT----------------------"<<endl;
-    fp1<<"Room Tarrif                                      >>   500 Rs."<<endl;
+    fp1<<"--------------------------------RECEIPT------------------------------"<<endl;
+    fp1<<"Room Tarrif per day                                      >>   500 Rs."<<endl;
     fp1<<"S.no---------ITEM--------QUANITY-----------MRP-----------TOTAL"<<endl;
-    for(int i=0;i<v[t2-1]->myOrdersBooking.size();i++){
-        int quantity=v[t2-1]->myOrdersBooking[i][0][1];
-        int mrp=v[t2-1]->myOrdersBooking[i][0][2];
-        int serial_no=(v[t2-1]->myOrdersBooking[i][0][0]);
+    for(int j=0;j<v[t2-1]->myOrdersBooking.size();j++){
+    for(int i=0;i<v[t2-1]->myOrdersBooking[j].size();i++){
+        int quantity=v[t2-1]->myOrdersBooking[0][i].y;
+        int mrp=v[t2-1]->myOrdersBooking[0][i].z;
+        int serial_no=(v[t2-1]->myOrdersBooking[0][i].x);
         int product=mrp*quantity;
-    fp1<<i+1<<")-------"<<dishes[serial_no-1]<<"---"<<quantity<<"---"<<mrp<<"------"<<product<<endl;     
+    fp1<<i+1<<")----------"<<dishes[serial_no-1]<<"---------"<<quantity<<"---------------"<<mrp<<"------------"<<product<<endl;     
     }
-    fp1<<"--------------------------------------------------"<<endl;
-    fp1<<"------------------------------Amount Is:-  "<<v[t2-1]->bill<<endl;
+    }
+    fp1<<"----------------------------------------------------------------------"<<endl;
+    fp1<<"---------------------------------------------------------Amount Is:-  "<<v[t2-1]->bill<<endl;
     cout<<"COPY OF YOUR BILL IS CREATED\n";
     }
     else {cout<<"INVALID BOOKING ID \n";}
@@ -122,9 +127,9 @@ int menu(bool flag,int room){
     header();
     int a,b,c=0;
     string st;
-    vector<vector<int>>singleOrder;
-    vector<int>temporaryVector;
-    temporaryVector.push_back(0);temporaryVector.push_back(0);temporaryVector.push_back(0);
+    vector<triplet>singleOrder;
+    
+   
     cout<<"SELECT YOUR REQUIRED FOOD ACCORDING TO THE SERIAL NUMBER\n";
     cout<<"1)Pizza\n --->500 Rs. \n";
     cout<<"2)Pasta\n --->700 Rs. \n";
@@ -138,18 +143,19 @@ int menu(bool flag,int room){
     int arr[9]={500,700,50,30,35,25,15,5,250};
     // string dishes[9]={"Pizza","Pasta","Burger","Sprite","Coca cola","Samosa","Chips","Roti","Dal"};
     do{cout<<"\n ENTER THE SERIAL NUMBER\n";
-    cin>>a;temporaryVector[0]=a;
+    cin>>a;
     cout<<"\n ENTER QUANTITY YOU WANT \n";
-    cin>>b;temporaryVector[1]=b;
-    temporaryVector[2]=arr[a-1];
-    singleOrder.push_back(temporaryVector);
+    cin>>b;
+    
+    singleOrder.push_back({a,b,arr[a-1]});
      c=c+(b*arr[a-1]);
     cout<<"TO CONTINUE ORDERING PRESS::Y ELSE PRESS N\n";
     cin>>st;
-    }while(st=="Y"||st=="y");
+    // }while(st=="Y"||st=="y");
     if(flag==true && room!=0){
         v[room-1]->myOrdersBooking.push_back(singleOrder);
     }
+    }while(st=="Y"||st=="y");
     // else(flag==false && room==0){
     //     for(int i=0;i<singleOrder.size())
     // }
@@ -208,7 +214,7 @@ void generateBillWithBooking(){
     else {cout<<"INVALID BOOKING ID\n";}
          
         system("pause");
-     makeBillForBooking();
+    
     interfaceWindow_01();
 }
 //-----------------------------------------------------------------------------------------
