@@ -3,6 +3,7 @@
 using namespace std;
 int bookingID=0;
 void header();
+void My_exit();
 void interfaceWindow_01();
 
 string dishes[9]={"Pizza","Pasta","Burger","Sprite","Coca cola","Samosa","Chips","Roti","Dal"};
@@ -34,7 +35,7 @@ class booking{
 };
 vector<booking*>v;
 //-----------------------------------------------------------------------------------------
-void exit(){
+void My_exit(){
 interfaceWindow_01();
 }
 //-----------------------------------------------------------------------------------------
@@ -61,7 +62,7 @@ void DetailCollection(){
     system("pause");
     interfaceWindow_01();
     }
-    else if(temporary=="0"){exit();}
+    else if(temporary=="0"){My_exit();}
     else {interfaceWindow_01();}
 }
 //-----------------------------------------------------------------------------------------
@@ -114,7 +115,11 @@ void makeBillForBooking(){
         int serial_no=(v[t2-1]->myOrdersBooking[j][i].first);
         int product=mrp*quantity;
     if(quantity!=0){
-        fp1<<counter<<")----------"<<dishes[serial_no-1]<<"---------"<<quantity<<"---------------"<<mrp<<"------------"<<product<<endl;     
+        fp1<<counter<<
+        ")----------"<<dishes[serial_no-1]
+        <<"---------"<<quantity
+        <<"---------"<<mrp
+        <<"---------"<<product<<endl;     
     counter++;
 
     v[t2-1]->myOrdersBooking[j][i].second.first=0;
@@ -126,7 +131,7 @@ void makeBillForBooking(){
     fp1<<"---------------------------------------------------------Amount Is:-  "<<v[t2-1]->bill<<endl;
     cout<<"COPY OF YOUR BILL IS CREATED\n";
     }
-    else if(t2==0){exit();}
+    else if(t2==0){My_exit();}
     else {cout<<"INVALID BOOKING ID \n";}
     system("pause");
     interfaceWindow_01();
@@ -182,7 +187,7 @@ void order(){
     header();
     int yourBILL=0;
     string s;
-    cout<<"TO PLACE AN ORDER PRESS::Y else PRESS N\n";
+    cout<<"TO PLACE AN ORDER PRESS::Y else PRESS N \n TO EXIT PRESS 0\n";
     cin>>s;
     
         if(s=="Y"||s=="y"){
@@ -190,7 +195,7 @@ void order(){
         yourBILL= yourBILL + menu(flag2,0);
         cout<<"\n YOUR TOTAL BILLING AMOUNT IS ::"<<yourBILL<<"\n";
 	}
-     
+     else if(s=="0"){My_exit();}
         system("pause");
     interfaceWindow_01();
 }
@@ -205,7 +210,7 @@ void orderWithBooking(){
         bool flag1=true;
        v[m-1]->bill = v[m-1]->bill+menu(flag1,m);
     }
-    else if(m==0){exit();}
+    else if(m==0){ My_exit();}
     else {cout<<"INVALID BOOKING ID\n";}
        
         system("pause");
@@ -227,7 +232,7 @@ void generateBillWithBooking(){
     cout<<"YOUR BILLING AMOUNT::  "<<v[t-1]->bill<<"\n";
     addToFile(t);
     }
-    else if(t==0){exit();}
+    else if(t==0){My_exit();}
     else {cout<<"INVALID BOOKING ID\n";}
          
         system("pause");
