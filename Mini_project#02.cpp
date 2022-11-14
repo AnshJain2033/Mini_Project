@@ -34,7 +34,9 @@ class booking{
 };
 vector<booking*>v;
 //-----------------------------------------------------------------------------------------
-
+void exit(){
+interfaceWindow_01();
+}
 //-----------------------------------------------------------------------------------------
 void DetailCollection(){
     system("CLS");
@@ -45,7 +47,7 @@ void DetailCollection(){
     bool flag=false;
     int departure;
     cout<<"TARRIF IS 500 Rs. PER DAY\n";
-    cout<<"TO CONTINUE BOOKING PRESS Y ELSE PRESS N::\n";
+    cout<<"TO CONTINUE BOOKING PRESS Y ELSE PRESS N::TO EXIT PRESS 0 \n";
     cin>>temporary;
     if(temporary=="y"||temporary=="Y"){
     cout<<"Enter your details\n";
@@ -59,6 +61,7 @@ void DetailCollection(){
     system("pause");
     interfaceWindow_01();
     }
+    else if(temporary=="0"){exit();}
     else {interfaceWindow_01();}
 }
 //-----------------------------------------------------------------------------------------
@@ -96,7 +99,8 @@ void makeBillForBooking(){
     fstream fp1;
     int t2;
     int counter=1;
-    cout<<"ENTER YOUR BOOKING ID NUMBER \n";
+
+    cout<<"ENTER YOUR BOOKING ID NUMBER :: \n \v TO EXIT PRESS 0\n";
     cin>>t2;
     if(v.size()>=t2){
     fp1.open("YourBill.txt",fstream::app);
@@ -122,6 +126,7 @@ void makeBillForBooking(){
     fp1<<"---------------------------------------------------------Amount Is:-  "<<v[t2-1]->bill<<endl;
     cout<<"COPY OF YOUR BILL IS CREATED\n";
     }
+    else if(t2==0){exit();}
     else {cout<<"INVALID BOOKING ID \n";}
     system("pause");
     interfaceWindow_01();
@@ -194,12 +199,13 @@ void orderWithBooking(){
     system("CLS");
     header();
     int m;
-    cout<<"ENTER YOUR BOOKING ID \n";
+    cout<<"ENTER YOUR BOOKING ID ::\n TO EXIT PRESS 0\n";
     cin>>m;
     if(v.size()>=m){
         bool flag1=true;
        v[m-1]->bill = v[m-1]->bill+menu(flag1,m);
     }
+    else if(m==0){exit();}
     else {cout<<"INVALID BOOKING ID\n";}
        
         system("pause");
@@ -210,7 +216,7 @@ void generateBillWithBooking(){
     system("CLS");
     header();
     int t;
-    cout<<"ENTER YOUR BOOKING ID\n";
+    cout<<"ENTER YOUR BOOKING ID::\n TO EXIT PRESS 0\n";
     cin>>t;
     if(v.size()>=t){
     cout<<"\v YOUR BILL\n";
@@ -221,6 +227,7 @@ void generateBillWithBooking(){
     cout<<"YOUR BILLING AMOUNT::  "<<v[t-1]->bill<<"\n";
     addToFile(t);
     }
+    else if(t==0){exit();}
     else {cout<<"INVALID BOOKING ID\n";}
          
         system("pause");
