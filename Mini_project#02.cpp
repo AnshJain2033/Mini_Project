@@ -27,14 +27,14 @@ string dishes[9]={"Pizza","Pasta",
 class booking{
     public:
     string name;
-    int dateOfarrival;
-    int monthOfarrival;
-    int dateOfdeparture;
-    int monthOfdeparture;
-    int yearOfarrival;
-    int yearOfdeparture;
-    int bill;
-    int yourBookingID;
+    int     dateOfarrival;
+    int     monthOfarrival;
+    int     dateOfdeparture;
+    int     monthOfdeparture;
+    int     yearOfarrival;
+    int     yearOfdeparture;
+    int     bill;
+    int     yourBookingID;
     vector<vector<pair<int,pair<int,int>>>>myOrdersBooking;
     booking(string name,int arrival,int dateOfdeparture,int & bookingID){
         this->name=name;
@@ -66,11 +66,11 @@ interfaceWindow_01();
 void DetailCollection(){
     system("CLS");
     header();
-    string MyName;
-    string temporary;
-    int arrival;
-    bool flag=false;
-    int departure;
+    string  MyName;
+    string  temporary;
+    int     arrival;
+    bool    flag=false;
+    int     departure;
     cout<<"TARRIF IS 500 Rs. PER DAY\n";
     cout<<"TO CONTINUE BOOKING PRESS Y ELSE PRESS N::TO EXIT PRESS 0\n";
     cin>>temporary;
@@ -133,8 +133,8 @@ void makeBillForBooking(){
      system("CLS");
     header();
     fstream fp1;
-    int t2;
-    int counter=1;
+    int     t2;
+    int     counter=1;
 
     cout<<"ENTER YOUR BOOKING ID NUMBER :: \n \v TO EXIT PRESS 0\n";
     cin>>t2;
@@ -180,8 +180,8 @@ void makeBillForBooking(){
 int menu(bool flag,int room){
     system("CLS");
     header();
-    int a,b,c=0;
-    string st;
+    int     a,b,c=0;
+    string  st;
     vector<pair<int,pair<int,int>>>singleOrder;
     
    
@@ -222,8 +222,8 @@ int menu(bool flag,int room){
 void order(){
     system("CLS");
     header();
-    int yourBILL=0;
-    string s;
+    int     yourBILL=0;
+    string  s;
     cout<<"TO PLACE AN ORDER PRESS::Y else PRESS N \n TO EXIT PRESS 0\n";
     cin>>s;
     
@@ -246,7 +246,7 @@ void order(){
 void orderWithBooking(){
     system("CLS");
     header();
-    int m;
+    int     m;
     cout<<"ENTER YOUR BOOKING ID ::\n TO EXIT PRESS 0\n";
     cin>>m;
     if(v.size()>=m){
@@ -268,7 +268,7 @@ void orderWithBooking(){
 void generateBillWithBooking(){
     system("CLS");
     header();
-    int t;
+    int     t;
     cout<<"ENTER YOUR BOOKING ID::\n TO EXIT PRESS 0\n";
     cin>>t;
     if(v.size()>=t){
@@ -296,7 +296,7 @@ void generateBillWithBooking(){
 void interfaceWindow_01(){
     system("CLS");
     header();
-    int k;
+    int     k;
     
     cout<<" SELECT AS PER YOUR CHOICE\n";
     cout<<"1) MAKE A BOOKING \n";
