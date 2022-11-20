@@ -1,4 +1,6 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
+#include<algorithm>
 #include<fstream>
 using namespace std;
 //-------------------------------------------------------------------------
@@ -319,7 +321,7 @@ void interfaceWindow_01(){
             break;
         case 5: makeBillForBooking();
             break;
-        default : cout<<"INVALID OPTION \n";
+       // default : cout<<"INVALID OPTION \n";
     }}while(k>5 || k<1);
 }
 //-------------------------------------------------------------------------
