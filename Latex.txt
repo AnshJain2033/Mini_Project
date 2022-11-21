@@ -1,3 +1,194 @@
+\documentclass{article}
+\documentclass[border=0.2cm]{standalone}
+\usepackage{graphicx}
+\usepackage{tikz} 
+\usepackage[dvipsnames]{xcolor}
+\usepackage{smartdiagram}  
+ \usepackage{listings}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usetikzlibrary{positioning}
+\usepackage[a4paper,margin=3cm,portrait, headsep=24pt, headheight=2cm]{geometry}
+\usepackage{fontenc}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{textcomp}
+\usepackage{tikz}   
+\usepackage{pgfplots}  
+\usepgfplotslibrary{polar} % to determine the polar coordinates  
+\usepgflibrary{shapes.geometric}  
+\usetikzlibrary{calc}  
+\pgfplotsset{my style/.append style={axis x line=middle, axis y line=  
+middle, xlabel={$x$}, ylabel={$y$}, axis equal }} 
+%\usepackage{showframe} % just to show the margins
+
+%\usepackage[hmargin=4.5cm,vmargin=4.5cm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\huge{Ansh Jain}}
+\rhead{\huge{0801CS211019}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\graphicspath{ {images/} }
+
+\begin{document}
+\begin{center}\bf{\huge{Hotel Management System\\
+Mini Project}\end{center}
+\begin{align}
+    \begin{enumerate*}
+        \item[]\bf\Large Objective of the project\Large:-\bf \\  
+       \normalsize The objective of this project is to make a robust system which could solve the problem associated with the inefficient functioning of the hotel management and booking system.
+        \begin{enumerate*}
+            \item \bf\Large Function Description:- \bf \Large
+            \begin{enumerate*}\\
+    \item\Large\bf1.)header():-\large This function is used to create a fancy looking header for each of the window it makes the window look more attractive and user friendly.\\
+    \item\Large\bf2.)My\_exit():\large- This is a exit function which whenever called helps in returning the control back to the main interface window(interfaceWindow\_01)\\
+    \item\Large\bf3.)interfaceWindow\_01():-\large This function is used to create an    interface for 
+   user to interact with the program it directs the flow of program
+   according to the users choice.\\
+    \item\Large\bf4.)DetailCollection():-\large This function is called whenever the user wants to create a Booking .This function is used to collect details from the 
+   user and create an object of that user and store value of its data members there. This is the point where the Booking of a user is created.\\
+    \item\Large\bf5.)addToFile():-\large This function is used to append a record file for 
+   business purpose.
+   This function generates a data.txt file and keeps recording and updating the booking 
+   details and billing details in form of space saperated columns.\\
+    \item\Large\bf6.)makeBillForBooking():-\large This function is used to generated a copy of the
+   bill for the user.
+   It generates a YourBill.txt file which could be used to print a bill.
+   This bill consist of room tarrif per day , details of the orders placed by the 
+   user, total billing amount. This function is selected when the user wants the to make a copy of the bill.\\
+    \item\Large\bf7.)menu():-\large This function is basically used to display the menu for the 
+  order.Also we can give many entries and place many orders in a single run of this function. 
+  Also this function helps to store the entries which are used in bill 
+   generation. \\
+    \item\Large\bf8.)order():-\large This function is basically used to take order of the user not 
+   having any booking ID or having no Booking with the hotel.It takes order and just displays the billing 
+   amount.It uses the same menu function as above to display the available menu for orders.\\
+    \item\Large\bf9.)orderWithBooking():-\large This function provides facility to the user to place
+ an order using Booking ID. The total payable amount generated each 
+   time user places an order gets updated in the final billing of the 
+   customer.This provides the facility to place multiple orders in same call of the function as well as it provides facility to place multiple orders in multiple call of the function.But the total bill is generated when the final billing process is done.\\
+    \item\Large\bf10.)generateBillWithBooking():-\large This function is used to generate a bill of
+   of the user using Booking ID of the user it display the bill also it 
+   store the billing details in a separate data.txt file\\
+    \item\Large\bf11.)main():-\large This is the point in the program from where the program starts executing.
+    \pagebreak
+            \end{enumerate}
+        \end{enumerate}
+            \item\bf\LARGE \begin{center}
+            Output Generated 
+            \end{center}
+            \begin{enumerate*}
+                \item \bf\Large1.) The first Interface Window when the program is started.
+            \begin{enumerate*}
+                \item \includegraphics[scale=1]{InterfaceWindow.png}
+            \end{enumerate}
+            \end{enumerate}
+            \begin{enumerate*}
+                \item \bf\Large2.) If the option number 1 is selected to make a Booking.
+            \begin{enumerate*}
+                \item \includegraphics[scale=1]{option1.png}
+            \end{enumerate}
+            \begin{enumerate*}\pagebreak
+                \item \bf\Large3.) Entering the data to make booking.
+            \begin{enumerate*}
+                \item \includegraphics[scale=1]{option1.1.png}
+            \end{enumerate}
+             \item \bf\Large4.) Selecting option 2 back from interface window to make an order using Customer Booking ID.
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{21.png} 
+             \end{enumerate}
+              \item \bf\Large5.) Entering the booking ID provided ahead to make an order.
+             \begin{enumerate*}
+                 \item \includegraphics[scale=0.75]{2.1.png} 
+             \end{enumerate}
+             \item \bf\Large6.)Making an order our choice 
+             \begin{enumerate*}
+                 \item \includegraphics[scale=0.78]{2.1.1.png} 
+             \end{enumerate}
+             \item \bf\Large7.)Selecting option 3 to make an order without using any Booking ID.
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{3.png} 
+             \end{enumerate}
+             \item \bf\Large8.)Making an order our choice 
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{3.1.png} 
+             \end{enumerate}\pagebreak
+             \item \bf \Large9.)Placing an order
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{3.2.png} 
+             \end{enumerate}\pagebreak
+             \item \bf \Large10.) Selecting Option 4 for generating bill with booking ID
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{4.png} 
+             \end{enumerate}
+                  \item \bf \Large11.)Giving booking ID to generate bill
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{4.1.png} 
+             \end{enumerate}\pagebreak
+                  \item \bf \Large12.)Bill Generated
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{4.2.png} 
+             \end{enumerate}
+                \item \bf \Large13.)Selecting option 5 to generate a copy of the bill 
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{5.png} 
+             \end{enumerate}\pagebreak
+                \item \bf \Large14.)Giving Booking ID
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{5.1.png} 
+             \end{enumerate}
+              \item \bf \Large15.)Bill Generated
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{5.2.png} 
+             \end{enumerate}
+              \item \bf \Large16.)The data stored as a business record in data.txt file
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{data.png} 
+             \end{enumerate}\pagebreak
+              \item \bf \Large17.)The copy of the Bill Generated in YourBill.txt file
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{YourBill.png} 
+             \end{enumerate}
+            \end{enumerate}
+    \end{enumerate}
+\end{align}\pagebreak
+\begin{enumerate*}
+    \item \LARGE\bf \begin{center}
+        Profiling Report \\(Of C++ code)    \end{center}
+\end{enumerate}
+\begin{enumerate*}
+    \item \includegraphics[scale=1.25]{profiling2.png} 
+\end{enumerate}\pagebreak
+\begin{enumerate*}
+    \item \LARGE\bf \begin{center}
+        Graphical representation of Profiled code
+         \item \includegraphics[scale=0.12]{outputMini2.png} 
+    \end{center}\pagebreak
+   \begin{enumerate*}
+       \item \begin{center}
+           \bf\LARGE \begin{center}
+               Debugging Report at possible edge cases:-\\
+               (at Line number 305,319,318,78,80)
+           \end{center}
+           \item\includegraphics[scale=0.75]{debugging_1.png} 
+           \item\includegraphics[scale=0.9]{debugging_2.png}
+           \item\includegraphics[scale=0.9]{debugging_3.png}
+           \item\includegraphics[scale=0.9]{debugging_4.png}
+           \item\includegraphics[scale=0.9]{debugging_5.png}
+           \item\includegraphics[scale=0.8]{debugging_6.png}
+       \end{center}\\
+   \end{enumerate}
+   \item \LARGE \bf \begin{center}
+       Program Code of Mini Project (in C++)
+   \end{center}
+   \begin{article}
+\lstset { %
+    language=C++,
+    backgroundcolor=\color{black!5}, 
+    basicstyle=\footnotesize,
+}
+\begin{lstlisting}
 #include<bits/stdc++.h>
 #include<fstream>
 using namespace std;
@@ -323,3 +514,16 @@ int main(){
     interfaceWindow_01();
     return 0;
 }
+\end{lstlisting}
+\end{article}\pagebreak
+\begin{enumerate*}
+    \item \LARGE\bf \begin{center}
+        Miscellaneous Informations:-
+    \end{center}
+    \item 
+\end{enumerate}
+\end{enumerate}
+\begin{center}\bf{\huge{END}}\end{center}
+\begin{center}\bf{\huge{SUBMITTED BY : ANSH JAIN}}\end{center}
+\begin{center}\bf{\huge{ENROLLMENT NO. :0801CS211019}}\end{center}
+\end{document}

@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+using ll=long long;
+int main()
+{
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+         ll n;
+         cin>>n;
+         ll i=1;
+         ll j=0;
+         bool flag=true;
+         if(n%2==0){
+             ll m=1;
+             j=(n/2)+1;
+             while(m<n+1){
+                 if(flag==true){cout<<i;}
+                 else{cout<<j;}
+                 if(flag==true){i++;m++;flag=false;continue;}
+                 else if(flag==false){j++;m++;flag=true;continue;}
+             }
+             
+         }  
+         else if(n%2!=0){ 
+             ll m=1;
+             j=(n/2)+2;
+             while(m<n+1){
+                 if(flag==true){cout<<i;}
+                 else{cout<<j;}
+                 if(flag==true){i++;m++;flag=false;continue;}
+                 else if(flag==false){j++;m++;flag=true;continue;}
+             }
+         }
+         cout<<"\n";
+    }
+    return 0;
+}
