@@ -1,0 +1,542 @@
+\documentclass{article}
+\documentclass[border=0.2cm]{standalone}
+\usepackage{graphicx}
+\usepackage{tikz} 
+\usepackage[dvipsnames]{xcolor}
+\usepackage{smartdiagram}  
+ \usepackage{listings}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usetikzlibrary{positioning}
+\usepackage[a4paper,margin=3cm,portrait, headsep=24pt, headheight=2cm]{geometry}
+\usepackage{fontenc}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{textcomp}
+\usepackage{tikz}   
+\usepackage{pgfplots}  
+\usepgfplotslibrary{polar} % to determine the polar coordinates  
+\usepgflibrary{shapes.geometric}  
+\usetikzlibrary{calc}  
+\pgfplotsset{my style/.append style={axis x line=middle, axis y line=  
+middle, xlabel={$x$}, ylabel={$y$}, axis equal }} 
+%\usepackage{showframe} % just to show the margins
+
+%\usepackage[hmargin=4.5cm,vmargin=4.5cm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\huge{Ansh Jain}}
+\rhead{\huge{0801CS211019}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\graphicspath{ {images/} }
+
+\begin{document}
+\begin{center}\bf{\huge{Hotel Management System\\
+Mini Project}\end{center}
+\begin{align}
+    \begin{enumerate*}
+        \item[]\bf\Large Objective of the project\Large:-\bf \\  
+       \normalsize The objective of this project is to make a robust system which could solve the problem associated with the inefficient functioning of the hotel management and booking system.
+        \begin{enumerate*}
+            \item \bf\Large Function Description:- \bf \Large
+            \begin{enumerate*}\\
+    \item\Large\bf1.)header():-\large This function is used to create a fancy looking header for each of the window it makes the window look more attractive and user friendly.\\
+    \item\Large\bf2.)My\_exit():\large- This is a exit function which whenever called helps in returning the control back to the main interface window(interfaceWindow\_01)\\
+    \item\Large\bf3.)interfaceWindow\_01():-\large This function is used to create an    interface for 
+   user to interact with the program it directs the flow of program
+   according to the users choice.\\
+    \item\Large\bf4.)DetailCollection():-\large This function is called whenever the user wants to create a Booking .This function is used to collect details from the 
+   user and create an object of that user and store value of its data members there. This is the point where the Booking of a user is created.\\
+    \item\Large\bf5.)addToFile():-\large This function is used to append a record file for 
+   business purpose.
+   This function generates a data.txt file and keeps recording and updating the booking 
+   details and billing details in form of space saperated columns.\\
+    \item\Large\bf6.)makeBillForBooking():-\large This function is used to generated a copy of the
+   bill for the user.
+   It generates a YourBill.txt file which could be used to print a bill.
+   This bill consist of room tarrif per day , details of the orders placed by the 
+   user, total billing amount. This function is selected when the user wants the to make a copy of the bill.\\
+    \item\Large\bf7.)menu():-\large This function is basically used to display the menu for the 
+  order.Also we can give many entries and place many orders in a single run of this function. 
+  Also this function helps to store the entries which are used in bill 
+   generation. \\
+    \item\Large\bf8.)order():-\large This function is basically used to take order of the user not 
+   having any booking ID or having no Booking with the hotel.It takes order and just displays the billing 
+   amount.It uses the same menu function as above to display the available menu for orders.\\
+    \item\Large\bf9.)orderWithBooking():-\large This function provides facility to the user to place
+ an order using Booking ID. The total payable amount generated each 
+   time user places an order gets updated in the final billing of the 
+   customer.This provides the facility to place multiple orders in same call of the function as well as it provides facility to place multiple orders in multiple call of the function.But the total bill is generated when the final billing process is done.\\
+    \item\Large\bf10.)generateBillWithBooking():-\large This function is used to generate a bill of
+   of the user using Booking ID of the user it display the bill also it 
+   store the billing details in a separate data.txt file\\
+    \item\Large\bf11.)main():-\large This is the point in the program from where the program starts executing.
+    \pagebreak
+            \end{enumerate}
+        \end{enumerate}
+            \item\bf\LARGE \begin{center}
+            Output Generated 
+            \end{center}
+            \begin{enumerate*}
+                \item \bf\Large1.) The first Interface Window when the program is started.
+            \begin{enumerate*}
+                \item \includegraphics[scale=1]{InterfaceWindow.png}
+            \end{enumerate}
+            \end{enumerate}
+            \begin{enumerate*}
+                \item \bf\Large2.) If the option number 1 is selected to make a Booking.
+            \begin{enumerate*}
+                \item \includegraphics[scale=1]{option1.png}
+            \end{enumerate}
+            \begin{enumerate*}\pagebreak
+                \item \bf\Large3.) Entering the data to make booking.
+            \begin{enumerate*}
+                \item \includegraphics[scale=1]{option1.1.png}
+            \end{enumerate}
+             \item \bf\Large4.) Selecting option 2 back from interface window to make an order using Customer Booking ID.
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{21.png} 
+             \end{enumerate}
+              \item \bf\Large5.) Entering the booking ID provided ahead to make an order.
+             \begin{enumerate*}
+                 \item \includegraphics[scale=0.75]{2.1.png} 
+             \end{enumerate}
+             \item \bf\Large6.)Making an order our choice 
+             \begin{enumerate*}
+                 \item \includegraphics[scale=0.78]{2.1.1.png} 
+             \end{enumerate}
+             \item \bf\Large7.)Selecting option 3 to make an order without using any Booking ID.
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{3.png} 
+             \end{enumerate}
+             \item \bf\Large8.)Making an order our choice 
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{3.1.png} 
+             \end{enumerate}\pagebreak
+             \item \bf \Large9.)Placing an order
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{3.2.png} 
+             \end{enumerate}\pagebreak
+             \item \bf \Large10.) Selecting Option 4 for generating bill with booking ID
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{4.png} 
+             \end{enumerate}
+                  \item \bf \Large11.)Giving booking ID to generate bill
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{4.1.png} 
+             \end{enumerate}\pagebreak
+                  \item \bf \Large12.)Bill Generated
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{4.2.png} 
+             \end{enumerate}
+                \item \bf \Large13.)Selecting option 5 to generate a copy of the bill 
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{5.png} 
+             \end{enumerate}\pagebreak
+                \item \bf \Large14.)Giving Booking ID
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{5.1.png} 
+             \end{enumerate}
+              \item \bf \Large15.)Bill Generated
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{5.2.png} 
+             \end{enumerate}
+              \item \bf \Large16.)The data stored as a business record in data.txt file
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{data.png} 
+             \end{enumerate}\pagebreak
+              \item \bf \Large17.)The copy of the Bill Generated in YourBill.txt file
+             \begin{enumerate*}
+                 \item \includegraphics[scale=1]{YourBill.png} 
+             \end{enumerate}
+            \end{enumerate}
+    \end{enumerate}
+\end{align}\pagebreak
+\begin{enumerate*}
+    \item \LARGE\bf \begin{center}
+        Profiling Report \\(Of C++ code)    \end{center}
+\end{enumerate}
+\begin{enumerate*}
+    \item \includegraphics[scale=1.25]{profiling2.png} 
+\end{enumerate}\pagebreak
+\begin{enumerate*}
+    \item \LARGE\bf \begin{center}
+        Graphical representation of Profiled code
+         \item \includegraphics[scale=0.12]{outputMini2.png} 
+    \end{center}\pagebreak
+   \begin{enumerate*}
+       \item \begin{center}
+           \bf\LARGE \begin{center}
+               Debugging Report at possible edge cases:-\\
+               (at Line number 305,319,318,78,80)
+           \end{center}
+           \item\includegraphics[scale=0.75]{debugging_1.png} 
+           \item\includegraphics[scale=0.9]{debugging_2.png}
+           \item\includegraphics[scale=0.9]{debugging_3.png}
+           \item\includegraphics[scale=0.9]{debugging_4.png}
+           \item\includegraphics[scale=0.9]{debugging_5.png}
+           \item\includegraphics[scale=0.8]{debugging_6.png}
+       \end{center}\\
+   \end{enumerate}
+   \item \LARGE \bf \begin{center}
+       Program Code of Mini Project (in C++)
+   \end{center}
+   \begin{article}
+\lstset { %
+    language=C++,
+    backgroundcolor=\color{black!5}, 
+    basicstyle=\footnotesize,
+}
+\begin{lstlisting}
+#include<bits/stdc++.h>
+#include<fstream>
+using namespace std;
+//-------------------------------------------------------------------------
+//Declaration of all the functions:-
+int     bookingID=0;
+void    header();
+void    My_exit();
+void    interfaceWindow_01();
+void    DetailCollection();
+void    addToFile(int t1);
+void    makeBillForBooking();
+int     menu(bool flag,int room);
+void    order();
+void    orderWithBooking();
+void    generateBillWithBooking();
+//-------------------------------------------------------------------------
+//Public declared array
+string dishes[9]={"Pizza","Pasta",
+                "Burger","Sprite",
+                "Coca cola","Samosa",
+                "Chips","Roti","Dal"};
+//-------------------------------------------------------------------------
+/*  booking class this class is used to store the individual details of the
+ *  customer this is done by creation of an object of this class
+ */
+class booking{
+    public:
+    string name;
+    int     dateOfarrival;
+    int     dateOfdeparture;
+    int     bill;
+    int     yourBookingID;
+    vector<vector<pair<int,pair<int,int>>>>myOrdersBooking;
+    booking(string name,int arrival,int dateOfdeparture,int & bookingID){
+        this->name=name;
+        this->dateOfarrival=arrival;
+        this->dateOfdeparture=dateOfdeparture;
+        this->bill=500*(dateOfdeparture-dateOfarrival);
+        this->yourBookingID=bookingID+1;
+        bookingID++;
+        cout<<"YOUR BOOKING IS DONE \n";
+        cout<<"YOUR ID NUMBER IS \n"<<yourBookingID<<"\n";
+        
+        system("pause");
+    }
+};
+vector<booking*>v; // vector having object as pointer to class booking
+//-------------------------------------------------------------------------
+ /* 
+  * My_exit() function is used for returning 
+  * back to the main Interface Window. 
+  */
+void My_exit(){    
+interfaceWindow_01();            
+}
+//-------------------------------------------------------------------------
+/*  DetailCollection() This function is used to collect details from the 
+ *  user and create an object of that user and store value of its data
+ *  members there
+ */
+void DetailCollection(){
+    system("CLS");
+    header();
+    string  MyName;
+    string  temporary;
+    int     arrival;
+    bool    flag=false;
+    int     departure;
+    cout<<"TARRIF IS 500 Rs. PER DAY\n";
+    cout<<"TO CONTINUE BOOKING PRESS Y ELSE PRESS N::TO EXIT PRESS 0\n";
+    cin>>temporary;
+    if(temporary=="y"||temporary=="Y"){
+    cout<<"Enter your details\n";
+    cout<<"Enter your name(enter _ for spaces)-->>               ";
+    cin>>MyName;
+    cout<<"Enter your arrival date-->>                           ";
+    cin>>arrival;
+    cout<<"Enter your date of departure-->>                      ";
+    cin>>departure;
+    v.push_back(new booking(MyName,arrival,departure,bookingID));
+    system("pause");
+    interfaceWindow_01();
+    }
+    else if(temporary=="0"){My_exit();}
+    else {interfaceWindow_01();}
+}
+//-------------------------------------------------------------------------
+void header() 
+ {
+    system("CLS");
+   cout<<"\n                      :::::::::::::::::::::::::::::::::::::";
+   cout<<"\n                      ::                                 ::";
+   cout<<"\n                      ::     ***********************     ::";
+   cout<<"\n                      ::     @                     @     ::";
+   cout<<"\n                      ::     @   HOTEL MANAGEMENT  @     ::";
+   cout<<"\n                      ::     @                     @     ::";
+   cout<<"\n                      ::     @        SYSTEM       @     ::";
+   cout<<"\n                      ::     @                     @     ::";
+   cout<<"\n                      ::     ***********************     ::";
+   cout<<"\n                      ::                                 ::";
+   cout<<"\n                      :::::::::::::::::::::::::::::::::::::\n\n";
+ }
+//-------------------------------------------------------------------------
+/*  addToFile() :- This function is used to append a record file for 
+ *  business purpose.
+ *  This function generates a .txt file and keeps recording the booking 
+ *  details and billing details in form of space saperated columns
+ */
+void addToFile(int t1){
+    fstream fp;
+    fp.open("data.txt", fstream::app);
+    fp<<v[t1-1]->name<<" "
+      <<v[t1-1]->dateOfarrival
+      <<" "<<v[t1-1]->dateOfdeparture
+      <<" "<<v[t1-1]->bill
+      <<" "<<v[t1-1]->yourBookingID<<endl;
+    fp.close();   
+}
+//-------------------------------------------------------------------------
+/*
+ *  makeBillForBooking() This function is used to generated a copy of the
+ *  bill of the user.
+ *  It generates a .txt file which could be used to print a bill.
+ *  The bill consist of romm tarrif per day, orders details places by the 
+ *  user, total billing amount.
+ */
+void makeBillForBooking(){
+     system("CLS");
+    header();
+    fstream fp1;
+    int     t2;
+    int     counter=1;
+
+    cout<<"ENTER YOUR BOOKING ID NUMBER :: \n \v TO EXIT PRESS 0\n";
+    cin>>t2;
+    if(v.size()>=t2){
+    fp1.open("YourBill.txt",fstream::app);
+    fp1<<"-------------------RECEIPT------------------------------"<<endl;
+    fp1<<"Room Tarrif per day                           >> 500 Rs."<<endl;
+    fp1<<"S.no------ITEM--------QUANITY----------MRP---------TOTAL"<<endl;
+    for(int j=0;j<v[t2-1]->myOrdersBooking.size();j++){
+            for(int i=0;i<v[t2-1]->myOrdersBooking[j].size();i++){
+                int quantity=v[t2-1]->myOrdersBooking[j][i].second.first;
+                int mrp=v[t2-1]->myOrdersBooking[j][i].second.second;
+                int serial_no=(v[t2-1]->myOrdersBooking[j][i].first);
+                int product=mrp*quantity;
+                if(quantity!=0){
+                    fp1<<counter<<
+                    ")----------"<<dishes[serial_no-1]
+                    <<"---------"<<quantity
+                    <<"---------"<<mrp
+                    <<"---------"<<product<<endl;     
+                    counter++;
+                    v[t2-1]->myOrdersBooking[j][i].second.first=0;
+                }
+            }
+    }
+    fp1<<"-------------------------------------------------------"<<endl;
+    fp1<<"------------------------------------------------Amount Is:-  "
+       <<v[t2-1]->bill<<endl;
+    cout<<"COPY OF YOUR BILL IS CREATED\n";
+    }
+    else if(t2==0){My_exit();}
+    else {cout<<"INVALID BOOKING ID \n";}
+    system("pause");
+    interfaceWindow_01();
+} 
+//-------------------------------------------------------------------------
+/*
+ *  menu():- This function is basically used to display the menu for the 
+ *  order.Also we can give many entries in single run of this function.
+ *  Also this function helps to store the entries which are used in bill 
+ *  generation. 
+ */
+int menu(bool flag,int room){
+    system("CLS");
+    header();
+    int     a,b,c=0;
+    string  st;
+    vector<pair<int,pair<int,int>>>singleOrder;
+    
+   
+    cout<<"SELECT YOUR REQUIRED FOOD ACCORDING TO THE SERIAL NUMBER\n";
+    cout<<"1)Pizza\n --->500 Rs. \n";
+    cout<<"2)Pasta\n --->700 Rs. \n";
+    cout<<"3)Burger\n --->50 Rs. \n";
+    cout<<"4)Sprite\n --->30 Rs. \n";
+    cout<<"5)Coca cola\n --->35 Rs. \n";
+    cout<<"6)Samosa\n --->25 Rs. \n";
+    cout<<"7)Chips\n --->15 Rs. \n";
+    cout<<"8)Roti\n --->5 Rs. \n";
+    cout<<"9)Dal\n --->250 Rs. \n";
+    int arr[9]={500,700,50,30,35,25,15,5,250};
+
+    do{cout<<"\n ENTER THE SERIAL NUMBER\n";
+    cin>>a;
+    cout<<"\n ENTER QUANTITY YOU WANT \n";
+    cin>>b;
+   
+    singleOrder.push_back(make_pair(a,make_pair(b,arr[a-1])));
+     c=c+(b*arr[a-1]);
+    cout<<"TO CONTINUE ORDERING PRESS::Y ELSE PRESS N\n";
+    cin>>st;
+    }while(st=="Y"||st=="y");
+    if(flag==true && room!=0){
+        v[room-1]->myOrdersBooking.push_back(singleOrder);
+    }
+  
+    return c;
+}
+//-------------------------------------------------------------------------
+/*
+ *  order() This function is basically used to take order of the user not 
+ *  having any booking ID.It takes order and just displays the billing 
+ *  amount. 
+ */
+void order(){
+    system("CLS");
+    header();
+    int     yourBILL=0;
+    string  s;
+    cout<<"TO PLACE AN ORDER PRESS::Y else PRESS N \n TO EXIT PRESS 0\n";
+    cin>>s;
+    
+        if(s=="Y"||s=="y"){
+        bool flag2=false;
+        yourBILL= yourBILL + menu(flag2,0);
+        cout<<"\n YOUR TOTAL BILLING AMOUNT IS ::"<<yourBILL<<"\n";
+	}
+     else if(s=="0"){My_exit();}
+        system("pause");
+    interfaceWindow_01();
+}
+//-------------------------------------------------------------------------
+/*
+ *  orderWithBooking() this function provides facility to the user to place
+ *  an order using Booking ID. The total payable amount generated each 
+ *  time user places an order gets updated in the final billing of the 
+ *  customer. 
+ */
+void orderWithBooking(){
+    system("CLS");
+    header();
+    int     m;
+    cout<<"ENTER YOUR BOOKING ID ::\n TO EXIT PRESS 0\n";
+    cin>>m;
+    if(v.size()>=m){
+        bool flag1=true;
+       v[m-1]->bill = v[m-1]->bill+menu(flag1,m);
+    }
+    else if(m==0){ My_exit();}
+    else {cout<<"INVALID BOOKING ID\n";}
+       
+        system("pause");
+    interfaceWindow_01();
+}
+//-------------------------------------------------------------------------
+/*
+ *  generateBillWithBooking():- This function is used to generate a bill of
+ *  of the user using Booking ID of the user it display the bill also it 
+ *  store the billing details in a separate .txt file 
+ */
+void generateBillWithBooking(){
+    system("CLS");
+    header();
+    int     t;
+    cout<<"ENTER YOUR BOOKING ID::\n TO EXIT PRESS 0\n";
+    cin>>t;
+    if(v.size()>=t){
+    cout<<"\v YOUR BILL\n";
+    cout<<"NAME::                 "<<v[t-1]->name<<"\n";
+    cout<<"DATE OF ARRIVAL::      "<<v[t-1]->dateOfarrival<<"\n";
+    cout<<"DATE OF DEPARTURE::    "<<v[t-1]->dateOfdeparture<<"\n";
+    cout<<"YOUR BOOKING ID::      "<<v[t-1]->yourBookingID<<"\n";
+    cout<<"YOUR BILLING AMOUNT::  "<<v[t-1]->bill<<"\n";
+    addToFile(t);
+    }
+    else if(t==0){My_exit();}
+    else {cout<<"INVALID BOOKING ID\n";}
+         
+        system("pause");
+    
+    interfaceWindow_01();
+}
+//-------------------------------------------------------------------------
+/*
+ *  interfaceWindow_01() this function is used to create an interface for 
+ *  for user to interact with the program it directs the flow of program
+ *  according to the users choice.
+ */
+void interfaceWindow_01(){
+    system("CLS");
+    header();
+    int     k;
+    
+    cout<<" SELECT AS PER YOUR CHOICE\n";
+    cout<<"1) MAKE A BOOKING \n";
+    cout<<"2) PLACE AN ORDER with BOOKING ID\n";
+    cout<<"3) PLACE AN ORDER \n";
+    cout<<"4) GENERATE BILL FOR BOOKING \n";
+    cout<<"5) PRINT MY BILL(WITH BOOKING ID) \n";
+    cout<<"TO EXIT PRESS 0\n";
+    do{cin>>k;
+    switch(k){
+        case 0: exit(0);
+            break;
+        case 1: DetailCollection();
+            break;
+        case 2: orderWithBooking();
+             break;
+        case 3: order();
+            break;
+        case 4: generateBillWithBooking();
+            break;
+        case 5: makeBillForBooking();
+            break;
+        default : cout<<"INVALID OPTION \n";
+    }}while(k>5 || k<0);
+}
+//-------------------------------------------------------------------------
+int main(){
+    interfaceWindow_01();
+    return 0;
+}
+\end{lstlisting}
+\end{article}\pagebreak
+\begin{enumerate*}
+    \item \LARGE\bf \begin{center}
+        Miscellaneous Informations:-
+    \end{center}
+    \item 1.) Start Date:- 13/11/2022\\
+    \item 2.) End Date:- 21/11/2022\\
+    \item 3.) Total Number of Line of code:-325\\
+    \item 4.) Number of functions:-11\\
+    \item 5.) Total Time required:- 8 days\\
+\end{enumerate}
+\begin{enumerate*}
+    \item \LARGE\bf \begin{center}
+        Some Coding Standards followed:-\\\end{center}
+        \item 1.) Maximum number of column width of code 80 columns.\\
+        \item 2.) Description of function is in block comments.\\
+        \item 3.) Naming of the functions is done according to their usage.\\
+        \item 4.) Firstly all declarations are done then functions are declared then they are implemented.\\
+    
+\end{enumerate}
+\end{enumerate}
+\begin{center}\bf{\huge{END OF REPORT}}\end{center}
+\begin{center}\bf{\huge{SUBMITTED BY : ANSH JAIN}}\end{center}
+\begin{center}\bf{\huge{ENROLLMENT NO. :0801CS211019}}\end{center}
+\end{document}
